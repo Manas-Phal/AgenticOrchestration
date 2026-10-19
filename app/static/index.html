@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Orchestration Control Center</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="brand">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-text">
+                    <h1>Agentic Orchestration Control Center</h1>
+                    <p>Production-Grade Multi-Framework System Topology</p>
+                </div>
+            </div>
+
+            <div class="framework-badges">
+                <span class="badge badge-langgraph">LangGraph (State & Workflow)</span>
+                <span class="badge badge-pydantic">PydanticAI (Boundary Validation)</span>
+                <span class="badge badge-dspy">DSPy (Optimization)</span>
+            </div>
+
+            <div class="status-indicator">
+                <div class="status-dot" id="system-status-dot"></div>
+                <span id="system-status-text">Checking System Health...</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <div class="main-grid">
+            <!-- Left Controls Sidebar -->
+            <div class="card">
+                <div class="card-title">
+                    <span>Research Query Input</span>
+                    <span style="font-size: 11px; color: var(--text-dim);" id="active-thread-id">Thread: None</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="query-input">
+                        <span>Research Query Prompt</span>
+                    </label>
+                    <textarea id="query-input" rows="4" placeholder="Enter research query or architecture topic prompt..."></textarea>
+                    
+                    <div class="preset-chips">
+                        <span class="chip" onclick="setQuery('High-Availability Microservices Pattern')">Microservices</span>
+                        <span class="chip" onclick="setQuery('Distributed Consensus Protocols & Raft')">Consensus</span>
+                        <span class="chip" onclick="setQuery('Zero-Trust Security Architecture')">Zero-Trust</span>
+                        <span class="chip chip-warning" onclick="setQuery('always_fail: High-Risk System Kernel Upgrade')">Human Review Interrupt</span>
+                    </div>
+                </div>
+
+                <div class="form-group slider-container">
+                    <label for="threshold-slider">
+                        <span>Quality Gate Threshold</span>
+                        <span id="threshold-val">0.80</span>
+                    </label>
+                    <input type="range" id="threshold-slider" min="0.50" max="0.95" step="0.05" value="0.80" oninput="document.getElementById('threshold-val').innerText = this.value">
+                </div>
+
+                <div class="form-group slider-container">
+                    <label for="iterations-slider">
+                        <span>Max Graph Iterations</span>
+                        <span id="iterations-val">3</span>
+                    </label>
+                    <input type="range" id="iterations-slider" min="1" max="5" step="1" value="3" oninput="document.getElementById('iterations-val').innerText = this.value">
+                </div>
+
+                <button class="btn-primary" id="btn-submit-request" onclick="startOrchestration()">
+                    <span>🚀 Launch Agent Workflow</span>
+                </button>
+
+                <!-- Subsystem Telemetry Box -->
+                <div class="topology-card" style="margin-top: 10px;">
+                    <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Subsystem Readiness</div>
+                    <div style="font-size: 11px; color: var(--text-dim); display: flex; flex-direction: column; gap: 4px;" id="subsystem-health-list">
+                        <div>• Config: Ready</div>
+                        <div>• Execution Mode: Deterministic Mock</div>
+                        <div>• Validation Layer: PydanticAI Active</div>
+                        <div>• LangGraph: StateGraph Compiled</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Workspace & Results -->
+            <div class="output-section">
+                <!-- Graph Topology Node Flow -->
+                <div class="card">
+                    <div class="card-title">Live Graph Execution Topology</div>
+                    <div class="node-flow">
+                        <div class="flow-node" id="node-planner">
+                            <span class="node-title">Planner</span>
+                            <span class="node-framework">LangGraph</span>
+                        </div>
+                        <span class="node-arrow">➔</span>
+
+                        <div class="flow-node" id="node-research">
+                            <span class="node-title">Research</span>
+                            <span class="node-framework">DSPy Module</span>
+                        </div>
+                        <span class="node-arrow">➔</span>
+
+                        <div class="flow-node" id="node-validation1">
+                            <span class="node-title">Validation</span>
+                            <span class="node-framework">PydanticAI</span>
+                        </div>
+                        <span class="node-arrow">➔</span>
+
+                        <div class="flow-node" id="node-critic">
+                            <span class="node-title">Critic Audit</span>
+                            <span class="node-framework">DSPy Module</span>
+                        </div>
+                        <span class="node-arrow">➔</span>
+
+                        <div class="flow-node" id="node-quality-gate">
+                            <span class="node-title">Quality Gate</span>
+                            <span class="node-framework">Router</span>
+                        </div>
+                        <span class="node-arrow">➔</span>
+
+                        <div class="flow-node" id="node-finalizer">
+                            <span class="node-title">Finalizer</span>
+                            <span class="node-framework">Domain Schema</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Operational Metrics Strip -->
+                <div class="metric-strip">
+                    <div class="metric-box">
+                        <span class="metric-label">Execution Status</span>
+                        <span class="metric-value" id="res-status" style="color: var(--cyan);">idle</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Quality Score</span>
+                        <span class="metric-value" id="res-score">0.00</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Iterations</span>
+                        <span class="metric-value" id="res-iterations">0</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">Total Latency</span>
+                        <span class="metric-value" id="res-latency">0 ms</span>
+                    </div>
+                </div>
+
+                <!-- Human In The Loop Interrupted Portal -->
+                <div class="human-review-portal hidden" id="human-review-portal">
+                    <div class="human-portal-header">
+                        <span>⚠️ Human Review Required (Graph Interrupted at Iteration Limit)</span>
+                    </div>
+                    <p style="font-size: 13px; color: var(--text-muted);" id="human-reason-text">
+                        Execution reached maximum loop iterations. Select a human review decision to resume the graph:
+                    </p>
+                    
+                    <div class="review-actions">
+                        <button class="btn-approve" onclick="resumeHumanDecision('approve')">✓ Approve Plan</button>
+                        <button class="btn-edit" onclick="showEditPortal()">✎ Edit Plan & Score</button>
+                        <button class="btn-reject" onclick="resumeHumanDecision('reject')">✕ Reject Execution</button>
+                    </div>
+
+                    <div id="edit-portal-inputs" class="hidden" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                        <label style="font-size: 12px; color: var(--text-muted);">Edit Execution Steps (Comma separated):</label>
+                        <input type="text" id="edit-steps-input" value="Staging canary deployment, Kernel audit log verification, Production rollout with rollback">
+                        <label style="font-size: 12px; color: var(--text-muted);">Override Quality Score (0.0 - 1.0):</label>
+                        <input type="text" id="edit-score-input" value="0.92">
+                        <button class="btn-primary" onclick="submitHumanEdit()" style="margin-top: 4px;">Submit Human Edit & Resume</button>
+                    </div>
+                </div>
+
+                <!-- Execution Output Tabs -->
+                <div class="card">
+                    <div class="card-title">Orchestrated Output Payload</div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--primary); margin-bottom: 6px;">SYNTHESIZED FINAL ANSWER</div>
+                            <div id="res-final-answer" style="font-size: 14px; color: var(--text-main); background: rgba(15,23,42,0.8); padding: 14px; border-radius: 10px; border: 1px solid var(--bg-card-border);">
+                                Submit a research query to execute the agentic orchestration graph.
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--cyan); margin-bottom: 6px;">STRUCTURED EXECUTION PLAN</div>
+                            <div class="plan-list" id="res-plan-steps">
+                                <div class="plan-item">• Pending plan generation...</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--emerald); margin-bottom: 6px;">DSPY RESEARCH FINDINGS & SOURCES</div>
+                            <div class="findings-list" id="res-research-findings">
+                                <div class="plan-item">• Pending empirical research execution...</div>
+                            </div>
+                            <div class="sources-list" id="res-sources-list" style="margin-top: 8px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evaluation Benchmark Table Card -->
+                <div class="card">
+                    <div class="card-title">
+                        <span>Evaluation Benchmark Comparison (Baseline vs DSPy Optimized)</span>
+                        <button class="chip" onclick="loadEvaluationSummary()">Refresh Benchmark</button>
+                    </div>
+                    
+                    <table class="benchmark-table">
+                        <thead>
+                            <tr>
+                                <th>Evaluation Metric</th>
+                                <th>Baseline (Zero-Shot)</th>
+                                <th>Optimized (DSPy Few-Shot)</th>
+                                <th>Difference</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="benchmark-table-body">
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: var(--text-dim);">Loading empirical evaluation benchmarks...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

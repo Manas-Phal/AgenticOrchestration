@@ -1,0 +1,228 @@
+{
+  "summary": {
+    "structured_output_validity": 1.0,
+    "research_relevance": 0.0,
+    "completeness": 1.0,
+    "citation_source_coverage": 1.0,
+    "critic_quality": 1.0,
+    "final_answer_quality": 0.91,
+    "retry_rate": 0.0,
+    "validation_failure_rate": 0.0,
+    "average_latency_ms": 1404.559,
+    "iteration_count": 2.0,
+    "human_escalation_rate": 0.0,
+    "estimated_token_usage_cost": 0.0
+  },
+  "details": [
+    {
+      "item_id": "test-01",
+      "query": "Distributed Cache Invalidation Strategies",
+      "thread_id": "eval-baseline-001",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 10921.55,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-02",
+      "query": "CI/CD Pipeline Security and Software Supply Chain",
+      "thread_id": "eval-baseline-002",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 338.3,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-03",
+      "query": "ACID Transactions vs BASE Consistency Model",
+      "thread_id": "eval-baseline-003",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 448.96,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-04",
+      "query": "Edge Computing and Low-Latency Gateway Routing",
+      "thread_id": "eval-baseline-004",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 415.31,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-05",
+      "query": "API Rate Limiting Algorithms and Token Bucket",
+      "thread_id": "eval-baseline-005",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 359.54,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-06",
+      "query": "Container Security Hardening and Seccomp Profiles",
+      "thread_id": "eval-baseline-006",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 345.38,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-07",
+      "query": "Real-Time Data Pipelines with Apache Flink",
+      "thread_id": "eval-baseline-007",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 343.34,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-08",
+      "query": "TLS 1.3 Handshake and Perfect Forward Secrecy",
+      "thread_id": "eval-baseline-008",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 279.11,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-09",
+      "query": "Distributed Lock Manager via Redis Redlock",
+      "thread_id": "eval-baseline-009",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 288.98,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "item_id": "test-10",
+      "query": "Feature Flag Architecture and Dynamic Rollouts",
+      "thread_id": "eval-baseline-010",
+      "status": "completed",
+      "metrics": {
+        "structured_output_validity": 1.0,
+        "research_relevance": 0.0,
+        "completeness": 1.0,
+        "citation_source_coverage": 1.0,
+        "critic_quality": 1.0,
+        "final_answer_quality": 0.91,
+        "retry_rate": 0.0,
+        "validation_failure_rate": 0.0,
+        "average_latency_ms": 305.12,
+        "iteration_count": 2.0,
+        "human_escalation_rate": 0.0,
+        "estimated_token_usage_cost": 0.0,
+        "total_tokens": 0
+      }
+    }
+  ]
+}

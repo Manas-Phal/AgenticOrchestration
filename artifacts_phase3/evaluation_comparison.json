@@ -1,0 +1,35 @@
+{
+  "dataset_info": {
+    "num_train_examples": 12,
+    "num_dev_examples": 8
+  },
+  "optimizer": {
+    "type": "LabeledFewShot",
+    "k_shots": 2
+  },
+  "baseline": {
+    "program_name": "Baseline Researcher",
+    "composite_score": 0.5812,
+    "metric_breakdown": {
+      "mean_relevance": 0.0281,
+      "mean_completeness": 1.0,
+      "mean_structural_correctness": 1.0,
+      "mean_support_quality": 0.8
+    }
+  },
+  "optimized": {
+    "program_name": "Optimized Researcher (LabeledFewShot k=2)",
+    "composite_score": 0.5812,
+    "metric_breakdown": {
+      "mean_relevance": 0.0281,
+      "mean_completeness": 1.0,
+      "mean_structural_correctness": 1.0,
+      "mean_support_quality": 0.8
+    }
+  },
+  "comparison": {
+    "score_delta": 0.0,
+    "demonstrated_improvement": false,
+    "summary_claim": "Optimization demonstrated a empirical score change of +0.0000 (Baseline: 0.5812 -> Optimized: 0.5812)."
+  }
+}
